@@ -11,4 +11,4 @@ using namespace std;
 
 void startDuel(spellcaster&, spellcaster&, spellcaster&);
 
-#endif /* YOURFILE_H */
+#endif /* STARTDUEL_H */
