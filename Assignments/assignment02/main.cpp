@@ -14,6 +14,7 @@ const int eloiseWandPower = 1;
 
 int main(){
     int duels;
+    srand(time(NULL));
     int angelaWins = 0;
     int cedricWins = 0;
     int eloiseWins = 0;
