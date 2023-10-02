@@ -12,18 +12,6 @@ int main(){
     cout << boolalpha;
     cout << fixed << setprecision(2);
     GraphPoint newPoint(3, 4);
-    // Write tests with assert() to test the following:
-    // 1. getX() and getY() return the correct values
-    // 2. setX() and setY() set the correct values
-    // 3. setCoords() sets the correct values
-    // 4. flipCoords() swaps the x and y coordinates
-    // 5. resetToOrigin() sets the x and y coordinates to 0.0
-    // 6. to_String() returns the correct string
-    // 7. operator==() returns true when the x and y coordinates are the same
-    // 8. operator==() returns false when the x and y coordinates are different
-    // 9. operator+() returns a new GraphPoint with the correct x and y coordinates
-    // 10. distance() returns the correct distance between two points
-    // 11. operator=() sets the x and y coordinates to the correct values
     assert(newPoint.getX() == 3);
     assert(newPoint.getY() == 4);
     newPoint.setX(5);
