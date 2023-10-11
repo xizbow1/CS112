@@ -40,7 +40,6 @@ int main(){
     assert(*noArgumentCard == *everythingCard);
     cout << "All operators passed!" << endl;
     // Testing to_string
-    cout << noArgumentCard->to_string() << endl;
     assert(noArgumentCard->to_string() == "Jace Beleren,2UUU,(5/6),The greatest mind-mage of all");
     assert(everythingCard->to_string() == "Jace Beleren,2UUU,(5/6),The greatest mind-mage of all");
     cout << "All to_string tests passed!" << endl;
