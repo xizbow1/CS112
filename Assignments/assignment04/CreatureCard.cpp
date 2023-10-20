@@ -76,3 +76,11 @@ void CreatureCard::display(){
     GameCard::display();
     cout << "(" << attack << ", " << toughness << ")" << endl;
 }
+
+string CreatureCard::to_string(){
+    return (GameCard::to_string() + "(" + std::to_string(attack) + ", " + std::to_string(toughness));
+}
+
+bool CreatureCard::operator==(const CreatureCard& other) const{
+    return (GetName() == other.GetName() && GetManaCost() == other.GetManaCost() && GetDescription() == other.GetDescription() && GetAttack() == other.GetAttack() && GetToughness() == other.GetToughness());
+}
