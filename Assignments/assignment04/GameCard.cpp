@@ -62,7 +62,7 @@ void GameCard::display(){
 }
 
 string GameCard::to_string(){
-    return name + "," + manaCost + " " + description;
+    return name + ", " + manaCost + ", " + description;
 }
 
 bool GameCard::operator==(const GameCard& other) const{

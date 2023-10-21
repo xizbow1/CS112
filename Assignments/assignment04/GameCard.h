@@ -19,7 +19,6 @@ class GameCard{
         // I'm using MTG cards as my template, and they use strings of characters to denote mana cost. For example, 2UUU is 2 of any color, and 3 blue mana.
         string GetName() const;
         string GetDescription() const;
-        virtual string GetType() = 0;
         void SetManaCost(string);
         void SetName(string);
         void SetDescription(string);

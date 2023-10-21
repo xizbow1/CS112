@@ -19,6 +19,7 @@ class CreatureCard : public GameCard {
         string to_string();
         // Not including a SetType() method because that makes no sense in the rules of Magic or, frankly, in my implementation.
 
+        void operator=(const CreatureCard& other);
         bool operator==(const CreatureCard& other) const;
 
         CreatureCard();

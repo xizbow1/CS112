@@ -5,7 +5,7 @@
 
 using namespace std;
 
-CreatureCard::CreatureCard(string name, string manaCost, string description, int attack, int toughness) : GameCard(manaCost, name, description){
+CreatureCard::CreatureCard(string manaCost, string name, string description, int attack, int toughness) : GameCard(manaCost, name, description){
     this->attack = attack;
     this->toughness = toughness; 
 }
@@ -22,16 +22,13 @@ CreatureCard::CreatureCard(string name) : GameCard(name){
 }
 
 CreatureCard::CreatureCard(string manaCost, string name) : GameCard(manaCost, name){
-    // Attack and toughness are (roughly) the same as the mana cost, with many exceptions, but this is a good default.
-    attack = stoi(manaCost.substr(0,1)) + manaCost.length() - 1;
-    toughness = stoi(manaCost.substr(0,1)) + manaCost.length() - 1;
-    
+    attack = 1;
+    toughness = 1;
 }
 
 CreatureCard::CreatureCard(string manaCost, string name, string description) : GameCard(manaCost, name, description){
-    attack = stoi(manaCost.substr(0,1)) + manaCost.length() - 1;
-    toughness = stoi(manaCost.substr(0,1)) + manaCost.length() - 1;
-    
+    attack = 1;
+    toughness = 1;
 }
 
 CreatureCard::CreatureCard(int attack, int toughness) : GameCard(){
@@ -64,21 +61,21 @@ string CreatureCard::GetType() const{
     return type;
 }
 
-void CreatureCard::SetAttack(int newattack){
+void CreatureCard::SetAttack(int attack){
     this->attack = attack;
 }
 
-void CreatureCard::SetToughness(int newtoughness){
+void CreatureCard::SetToughness(int toughness){
     this->toughness = toughness;
 }
 
 void CreatureCard::display(){
     GameCard::display();
-    cout << "(" << attack << ", " << toughness << ")" << endl;
+    cout << "(" << attack << "/" << toughness << ")" << endl;
 }
 
 string CreatureCard::to_string(){
-    return (GameCard::to_string() + "(" + std::to_string(attack) + ", " + std::to_string(toughness));
+    return  (GameCard::to_string()+ ", " + "(" + std::to_string(attack) + "/" + std::to_string(toughness) + ")");
 }
 
 bool CreatureCard::operator==(const CreatureCard& other) const{
