@@ -81,3 +81,11 @@ string CreatureCard::to_string(){
 bool CreatureCard::operator==(const CreatureCard& other) const{
     return (GetName() == other.GetName() && GetManaCost() == other.GetManaCost() && GetDescription() == other.GetDescription() && GetAttack() == other.GetAttack() && GetToughness() == other.GetToughness());
 }
+
+void CreatureCard::operator=(const CreatureCard& other){
+    this->SetName(other.GetName());
+    this->SetManaCost(other.GetManaCost());
+    this->SetDescription(other.GetDescription());
+    this->SetAttack(other.GetAttack());
+    this->SetToughness(other.GetToughness());
+}

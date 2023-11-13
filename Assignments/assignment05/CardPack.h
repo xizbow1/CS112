@@ -15,7 +15,7 @@ class CardPack : public CreatureCard { // I'm going to pretend this is like a de
         // Constructors
 
         CardPack();
-        CardPack(CreatureCard[]);
+        CardPack(CreatureCard);
         ~CardPack();
 
         // Accessors
@@ -40,10 +40,6 @@ class CardPack : public CreatureCard { // I'm going to pretend this is like a de
         void display();
     private:
         string packName;
-        int packSize;
+        int packSize = 0;
         vector<CreatureCard> thePack;
-
-
-
-
 };

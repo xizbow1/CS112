@@ -11,17 +11,15 @@ CardPack::CardPack(){
     packSize = DEFAULT_PACK_SIZE;
 }
 
-CardPack::CardPack(CreatureCard thePack[]){
+CardPack::CardPack(CreatureCard oneCard){
     packName = "Default Pack";
-    packSize = 0;
-    for(int i = 0; i < sizeof(thePack); i++){
-        addCard(thePack[i]);
-    }
+    packSize = 1;
+    thePack.push_back(oneCard);
     
 }
 
 CardPack::~CardPack(){
-    // I don't think I need to do anything here, but I'm not sure.
+    cout << "Pack " << packName << " has been destroyed." << endl;
 }
 
 int CardPack::getSize(){

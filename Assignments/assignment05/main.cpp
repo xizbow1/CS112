@@ -20,24 +20,26 @@ int main(){
     assert(defaultPack.getCard().GetName() == "No name nobody");
     assert(defaultPack.getCard().GetManaCost() == "0");
     assert(defaultPack.getCard().GetDescription() == "");
-    CreatureCard newCreature("1", "New Creature", "This is a new creature");
+    CreatureCard newCreature("1", "New Creature", "This is a new creature", 2, 2);
+    defaultPack.addCard(newCreature);
     assert(defaultPack.getCard(1).GetName() == "New Creature");
-    CreatureCard newPack[2] = {defaultCreature, newCreature};
-    CardPack newCardPack(newPack);
-    assert(newCardPack.getSize() == 2);
-    assert(newCardPack.getCard(0).GetName() == "No name nobody");
-    assert(newCardPack.getCard(1).GetName() == "New Creature");
-    newCardPack.setCard(0, newCreature);
-    assert(newCardPack.getCard(0) == newCardPack.getCard(1));
+    CardPack newCardPack(newCreature);
+    assert(newCardPack.getName() == "Default Pack");
+    assert(newCardPack.getSize() == 1);
+    assert(newCardPack.getCard(0).GetName() == "New Creature");
+    assert(newCardPack.getCard(0).GetDescription() == "This is a new creature");
+    newCardPack.setCard(0, defaultCreature);
+    assert(newCardPack.getCard(0) == defaultCreature);
+    newCardPack.addCard(newCreature);
     defaultPack = newCardPack;
     assert(defaultPack.getCard(0) == newCardPack.getCard(0));
     assert(defaultPack.getCard(1) == newCardPack.getCard(1));
-    assert(defaultPack.getCard(0) == defaultPack.getCard(1));
     assert(defaultPack == newCardPack);
     cout << "All asserts passed!" << endl;
     cout << "Displaying both packs" << endl;
     defaultPack.display();
     newCardPack.display();
+    return 0;
 
 
 }
